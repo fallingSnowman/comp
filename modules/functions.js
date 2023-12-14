@@ -144,7 +144,7 @@ const clickPresent = function(){
         return undefined;
     }
     if (currentOrder.present !== ""){
-        document.querySelector("img[src*='"+currentOrder.present+"Glow.png']").src = "assets/main/presents/"+currentOrder.present+".png";
+        document.querySelector("img[src*='"+currentOrder.present+"Glow.png']").src = "./assets/main/presents/"+currentOrder.present+".png";
     }
     currentOrder.present = filename;
     this.src = this.src.replace(".png", "")+"Glow"+".png";
@@ -157,17 +157,17 @@ const clickAccessory = function(){
     console.log(currentOrder);
     if (filename.search("WrapperThingie") != -1){
         if (currentOrder.accessory !== ""){
-            document.querySelector("img[src*='"+currentOrder.accessory+"Glow.png']").src = "assets/main/accessories/"+currentOrder.accessory+".png";
+            document.querySelector("img[src*='"+currentOrder.accessory+"Glow.png']").src = "./assets/main/accessories/"+currentOrder.accessory+".png";
         }
         currentOrder.accessory = filename;
     }else if (filename.search("Wrapper") != -1){
         if (currentOrder.wrap !== ""){
-            document.querySelector("img[src*='"+currentOrder.wrap+"Glow.png']").src = "assets/main/accessories/"+currentOrder.wrap+".png";
+            document.querySelector("img[src*='"+currentOrder.wrap+"Glow.png']").src = "./assets/main/accessories/"+currentOrder.wrap+".png";
         }
         currentOrder.wrap = filename;
     }else if (filename.search("Ribbon") != -1){
         if (currentOrder.ribbon !== ""){
-            document.querySelector("img[src*='"+currentOrder.ribbon+"Glow.png']").src = "assets/main/accessories/"+currentOrder.ribbon+".png";
+            document.querySelector("img[src*='"+currentOrder.ribbon+"Glow.png']").src = "./assets/main/accessories/"+currentOrder.ribbon+".png";
         }    
         currentOrder.ribbon = filename;
     }
@@ -233,10 +233,10 @@ const clickSubmit = function(){
         life--;
         UI.order[0].updateFunction()
     }
-    document.querySelector("img[src*='"+currentOrder.present+"Glow.png']").src = "assets/main/presents/"+currentOrder.present+".png";
-    document.querySelector("img[src*='"+currentOrder.wrap+"Glow.png']").src = "assets/main/accessories/"+currentOrder.wrap+".png";
-    document.querySelector("img[src*='"+currentOrder.ribbon+"Glow.png']").src = "assets/main/accessories/"+currentOrder.ribbon+".png";
-    document.querySelector("img[src*='"+currentOrder.accessory+"Glow.png']").src = "assets/main/accessories/"+currentOrder.accessory+".png";
+    document.querySelector("img[src*='"+currentOrder.present+"Glow.png']").src = "./assets/main/presents/"+currentOrder.present+".png";
+    document.querySelector("img[src*='"+currentOrder.wrap+"Glow.png']").src = "./assets/main/accessories/"+currentOrder.wrap+".png";
+    document.querySelector("img[src*='"+currentOrder.ribbon+"Glow.png']").src = "./assets/main/accessories/"+currentOrder.ribbon+".png";
+    document.querySelector("img[src*='"+currentOrder.accessory+"Glow.png']").src = "./assets/main/accessories/"+currentOrder.accessory+".png";
 
     currentOrder = {
         present: "",
