@@ -231,7 +231,7 @@ const clickSubmit = function(){
     }
     if (order.compare(currentOrder) === false){
         life--;
-        UI.order[0].updateFunction()
+        updateFunction();
     }
     document.querySelector("img[src*='"+currentOrder.present+"Glow.png']").src = "./assets/main/presents/"+currentOrder.present+".png";
     document.querySelector("img[src*='"+currentOrder.wrap+"Glow.png']").src = "./assets/main/accessories/"+currentOrder.wrap+".png";
