@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa`s present workshop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainMenu.css">
+    <link rel="stylesheet" href="ui.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png" sizes="48x48">
+</head>
+<body>
+    <div class="black" style="width: 100%; height: 5%; background-color: black; z-index: 50; position:relative;"></div>
+    <button class="overly">
+        <img src="assets/mainMenu/tutorial.png" >
+        <p>You are an elf working in Santa`s workshop and it`s Chrismas is soon!</p>
+        <p>There is one problem. Not all presnats are finished!</p>
+        <p>To pack up all presents on time, there is time limit on each order. The time limit will become worse as more orders you compete.</p>
+        <p>Your guardian elf will give you instructions.</p>
+        <p>Help Santa finish packing up presents and save Chrismas!</p>
+        <p>This game is endless, meaning this game has no ending.</p>
+        <p>Press escape to pause the game</p>
+
+        <h2 style="color: yellow;">Click anywhere to continue</h2>
+    </button>
+    <main>
+        <div class="overlay">
+            <img src="assets/mainMenu/backgroundOverlay.png" style="margin: -10px -5px 0;" alt="">
+            <div style="
+            position: absolute;
+            top: 265px;
+            left: 90px;
+            display: none;">
+                <h1 style="font-size: medium;">Score: <span id="score"></span></h1>
+                <h2 style="font-size: medium;">Best score: <span id="bestScore"></span></h2>
+            </div>
+            <button class="retry">RETRY</button>
+        </div>
+
+        <div class="layer-1" style="position: absolute;">
+            <div class="hearts ui">
+                <img src="assets/heartIcon.png" height="30px" id="h1"><img height="30px" id="h2" src="assets/heartIcon.png"><img id="h3" height="30px" src="assets/heartIcon.png">
+            </div>
+            <img class="background">
+            <div class="bottom-bar ui">
+                <button id="order"><p><img>take order</p></button>
+                <button id="choose"><p><img>choose</p></button>
+                <button id="decorate"><p><img>decorate</p></button>
+            </div>
+        </div>
+        <div class="layer-2" style="position: absolute;">
+            <div class="sprite ui">
+                <img src="assets/order/sprite.png">
+                <img src="assets/order/table.png">
+            </div>
+            <div class="presents ui" style="position: absolute; z-index: 10000;">
+                <div class="set" id="1">
+                    <img src="assets/main/presents/dinoPlushie.png">
+                    <img src="assets/main/presents/musicThingie.png" style="top: 300px;">
+                    <img src="assets/main/presents/wand.png" style="top: 450px;">
+                    <img src="assets/main/presents/tennisBall.png" style="left: 400px; top: 35px;">
+                    <img src="assets/main/presents/book.png" style="top: 150px; left: 325px;">
+                    <img src="assets/main/presents/heartNecklace.png" style="left: 230px;">
+                </div>
+                <div class="set" id="2">
+                    <img src="assets/main/presents/penSet.png">
+                    <img src="assets/main/presents/console.png" style="left: 200px;">
+                    <img src="assets/main/presents/goggles.png" style="top: 250px; left: 300px;">
+                    <img src="assets/main/presents/lipstick.png" style="top: 450px; left: 200px;">
+                </div>
+                <div class="set" id="3"></div>
+            </div>
+            <div class="accessories ui" style="position: absolute; z-index: 10000;">
+                <div class="box" style="top: 400px; left: 220px;">
+                    <img src="assets/main/box/topBox.png" style="top: -80px; left: -110px;">
+                    <img class="objectChoosen">
+                    <img src="assets/main/box/bottomBox.png">
+                </div>
+                <img src="assets/main/accessories/blueWrapper.png" style="top: 15px;">
+                <img src="assets/main/accessories/yellowWrapper.png" style="top: 90px;">
+                <img src="assets/main/accessories/redWrapper.png" style="top: 165px;">
+
+                <img src="assets/main/accessories/yellowWrapperThingie.png" style="top: 220px; left: 50px;">
+                <img src="assets/main/accessories/redWrapperThingie.png" style="top: 320px;">
+                <img src="assets/main/accessories/blueWrapperThingie.png" style="top: 450px; left: 50px;">
+
+                <img src="assets/main/accessories/yellowRibbon.png" style="top: 480px; left: 620px;">
+                <img src="assets/main/accessories/redRibbon.png" style="top: 400px; left: 620px;">
+                <img src="assets/main/accessories/blueRibbon.png" style="top: 320px; left: 620px;">
+
+            </div>
+        </div>
+        <div class="layer-3" style="height: 650px; position: absolute;">
+            <div class="message-bubble ui" style="position: absolute; z-index: 10000;">
+                <article>
+                    <p>Here is a new order:</p>
+                    <p>Interests: <span class="interests"></span></p>
+                    <p>Favorite colour: <span class="colour"></span></p>
+                    <p>Age: <span class="age"></span></p>
+                </article>
+                <button>SUBMIT</button>
+            </div>
+            <div class="top-bar ui">
+                <style>
+                    .arrow:hover{
+                        border-left: white 5px solid;
+                        cursor: pointer;
+                    }
+                </style>
+                <div>
+                <img src="assets/main/topBar/Rod.jpg">
+                <div сlass="note" style="
+                    margin-right: 5px;
+                    margin-top: -42px;
+                    float: right;
+                    background-repeat: no-repeat;
+                    background-image: url('assets/main/topBar/Note.png');
+                    position: relative;
+                    z-index: 10;
+                    min-height: 320px;
+                    max-width: 25%;
+                    font-size: small;
+                ">
+                    <p>No: <span class="id"></span></p>
+                    <p>Interests: <span class="interests"></span></p>
+                    <p>Favorite colour: <span class="colour"></span></p>
+                    <p>Age: <span class="age"></span></p>
+                </div>
+                </div>
+            </div>
+            <img class="arrow ui" src="assets/mainMenu/triangle.png" style="margin: 10px 10px 0; position: absolute; z-index: 100000; rotate: -90deg; filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(137deg) brightness(103%) contrast(101%);">
+        </div>
+        <div class="layer-4" style="position: absolute; height: 650px; width: 800px;">
+            <div class="arrows ui">
+                <style>
+                    .arrows{
+                        margin: 10px;
+                        width: 100%;
+                        position: absolute;
+                        align-self: center;
+                        justify-self: center;
+                    }
+                    .right-arrow, .left-arrow{
+                        position: absolute;
+                        z-index: 100000;
+                        filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(137deg) brightness(103%) contrast(101%);
+                        height: 50px;
+                    }
+                    .right-arrow:hover, .left-arrow:hover{
+                        border-left: white 5px solid;
+                        cursor: pointer;
+                    }
+                    .left-arrow{rotate: 180deg; left: -80px;}
+                    .right-arrow{left: 810px;}
+                </style>
+                <img class="right-arrow" src="assets/mainMenu/triangle.png">
+                <img class="left-arrow"  src="assets/mainMenu/triangle.png">
+            </div>
+            <div class="timer ui">
+                <h1></h1>
+            </div>
+            <section class="pause ui" style="position: absolute;">
+                <img src="assets/gameOver/pause.png">
+
+                <button class="continue">continue</button>
+                <button class="retr">retry</button>
+            </section>
+        </div>
+
+        <div class="menu">
+            <div class="first-block">
+                <img class="logo" src="assets/mainMenu/logo.png">
+            </div>
+            <div class="second-block">
+                <button id="play"><p><img src="assets/mainMenu/triangle.png" >play</p></button>
+                <article>
+                    <p>credits:</p>
+                    <p>main menu music:</p>
+                </article>
+            </div>
+
+            <div class="bg" style="width: 100%;">
+                <div class="snow-1"></div>
+                <div class="background" style="z-index: -3; position:sticky;"><img height="484px" src="assets/mainMenu/background.png"></div>
+                <div class="snow-2"></div>
+            </div>
+        </div>
+
+        
+        <script src="modules/orderClass.js"></script>
+        <script src="modules/data.js"></script>
+        <script src="modules/effects.js"></script>
+        <script src="modules/functions.js"></script>
+        <script src="main.js"></script>
+    </main>
+</body>
+</html>
